@@ -13,54 +13,50 @@
 </head>
 <body>
 
-    <header class="hero-bg">
-        <nav class="navbar navbar-expand-lg navbar-light pt-4">
-            <div class="container">
-                <a class="navbar-brand fw-bold" href="#">COSME</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mx-auto">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Shop</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
-                        </li>
-                    </ul>
-                    <div class="navbar-nav ms-auto">
-                        <a class="nav-link" href="#"><i class="bi bi-search"></i></a>
-                        <a class="nav-link" href="#"><i class="bi bi-list"></i></a>
-                    </div>
+    <header class="dynamic-bg">
+        <!-- --- INTEGRATED NAVBAR START --- -->
+        <nav class="pill-nav-wrapper">
+            <!-- Logo -->
+            <div class="logo text-white">
+                Royal Marketing
+            </div>
+
+            <!-- Floating Pill Menu -->
+            <div class="pill-menu d-none d-lg-flex">
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Our Brands</a></li>
+                    <li><a href="#">Manufacturing</a></li>
+                    <li><a href="#">Distribution</a></li>
+                </ul>
+            </div>
+
+            <!-- Right Actions -->
+            <div class="nav-actions">
+                <div class="lang-switch">
+                    <i class="bi bi-globe"></i>
+                    <span class="fw-medium">Eng</span>
                 </div>
+                <button class="btn-signup">Sign Up</button>
             </div>
         </nav>
+        <!-- --- INTEGRATED NAVBAR END --- -->
 
-    <section class="hero-section">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <p class="text-uppercase subtitle">Discover the Nature's Gift</p>
-                        <h1 class="display-3 fw-bold">COSME</h1>
-                        <p class="lead my-4">
-                            Experience products rooted of the essence of the natural ingredients. With nature's best, our formulations crafted with botanicals to gently nourish to your skin.
-                        </p>
-                        <a href="#" class="btn btn-learn-more">Learn More</a>
-                    </div>
-                    
-                    <div class="col-lg-6 text-center">
-                        <img src="https://via.placeholder.com/500x550.png?text=Your+Product+Image" alt="COSME Product" class="img-fluid hero-image">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content-container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6 hero-text text-white">
+                    <h1 class="display-3 fw-bolder dynamic-title">A FRESH START FOR EVERY HOME.</h1>
+                    <p class="lead mt-4 opacity-90">Manufacturers of Quality Detergents, Air fresheners & Laundry Liquids.</p>
+                </div>
+                
+                <div class="col-lg-6 d-flex justify-content-center mt-5 mt-lg-0">
+                    <div class="gemini-bottle animate-float">
+                        <span class="bottle-text">GEMINI NANO</span>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     </header>
 
     <section class="stats-section">

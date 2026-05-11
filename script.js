@@ -55,4 +55,20 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('.stat-number').forEach(el => {
         observer.observe(el);
     });
+
+    // Day/Night logic for Hero Section
+    const hour = new Date().getHours();
+    const isDay = hour >= 6 && hour < 18;
+    const dynamicTitle = document.querySelector('.dynamic-title');
+    const header = document.querySelector('.dynamic-bg');
+    
+    if (dynamicTitle && header) {
+        if (isDay) {
+            dynamicTitle.innerText = "A FRESH START FOR EVERY HOME.";
+            header.style.backgroundColor = "#ebf8ff"; // blue-50 equivalent
+        } else {
+            dynamicTitle.innerText = "ELEGANCE IN EVERY DROP.";
+            header.style.backgroundColor = "#312e81"; // indigo-950 equivalent
+        }
+    }
 });

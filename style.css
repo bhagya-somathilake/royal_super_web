@@ -16,88 +16,147 @@ body {
 }
 
 /* ===================
-   Navbar & Hero
+   Navbar & Hero (Integrated)
 ==================== */
-.hero-bg {
-    background-color: var(--light-beige);
+.dynamic-bg {
+    background-color: #ebf8ff; /* Fallback for bg-blue-50 */
+    background-image: url('https://images.unsplash.com/photo-1550133730-695473e544be?q=80&w=2070');
+    background-size: cover;
+    background-position: center;
     position: relative;
-    overflow: hidden; /* This is key for the blob */
-    padding-bottom: 5rem;
+    min-height: 100vh;
+    transition: background-color 1s ease, opacity 1s ease;
 }
 
-/* The decorative background "blob" */
-.hero-bg::after {
-    content: '';
+.hero-overlay {
     position: absolute;
-    top: -150px;
-    right: -200px;
-    width: 600px;
-    height: 600px;
-    background-color: var(--light-tan);
-    border-radius: 50%;
-    z-index: 0;
-    opacity: 0.5;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 1;
 }
 
-/* Ensure navbar and hero content are above the blob */
-.navbar, .hero-section {
+.hero-content-container {
     position: relative;
-    z-index: 2;
+    z-index: 10;
 }
 
-.navbar-brand {
-    color: var(--dark-text);
+/* Navbar styles */
+.pill-nav-wrapper {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+}
+
+.pill-nav-wrapper .logo {
     font-size: 1.5rem;
+    font-weight: 600;
 }
 
-.navbar-nav .nav-link {
-    color: var(--dark-text);
-    font-weight: 500;
-    margin: 0 0.5rem;
+.pill-menu {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    padding: 0.5rem;
 }
 
-/* Hero Section Content */
-.hero-section {
-    padding: 4rem 0;
+.pill-menu ul {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 0.25rem;
 }
 
-.hero-section .subtitle {
-    font-size: 0.9rem;
-    color: var(--primary-green);
-    font-weight: 500;
-    letter-spacing: 1px;
-}
-
-.hero-section h1 {
-    color: var(--dark-text);
-}
-
-.hero-section .tec {
-    font-size: 1.5rem;
-    vertical-align: super; /* Makes the "TEC" smaller and higher */
-    font-weight: 500;
-    margin-left: -5px;
-}
-
-.btn-learn-more {
-    background-color: var(--primary-green);
+.pill-menu a {
+    padding: 0.5rem 1.5rem;
     color: white;
-    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.875rem;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+}
+
+.pill-menu a:hover:not(.active) {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.pill-menu a.active {
+    background-color: white;
+    color: #111827;
+}
+
+/* Actions */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    cursor: pointer;
+    font-size: 0.875rem;
+}
+
+.btn-signup {
+    background-color: #b4e67e;
+    color: #111827;
+    padding: 0.625rem 2rem;
+    border-radius: 9999px;
+    font-weight: 700;
+    font-size: 0.875rem;
     border: none;
-    border-radius: 5px;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.btn-learn-more:hover {
-    background-color: #637155; /* A darker green */
+.btn-signup:hover {
+    background-color: #a3d46d;
+}
+
+.btn-signup:active {
+    transform: scale(0.95);
+}
+
+/* Bottle Component */
+.gemini-bottle {
+    width: 16rem;
+    height: 24rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottle-text {
     color: white;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
 }
 
-.hero-image {
-    max-width: 100%;
-    position: relative;
-    z-index: 2;
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+.animate-float {
+    animation: float 4s ease-in-out infinite;
 }
 
 /* ===================
