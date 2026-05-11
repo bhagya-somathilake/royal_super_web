@@ -1,0 +1,131 @@
+/* Import a Google Font (e.g., Poppins) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+/* Define color variables from the image */
+:root {
+    --primary-green: #798a6b;  /* Green from the button */
+    --light-beige: #f7f3ed;   /* Light background color */
+    --light-tan: #e8d9c6;     /* Tan for the background blob */
+    --dark-text: #3a3a3a;
+    --body-text: #555;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--body-text);
+}
+
+/* ===================
+   Navbar & Hero
+==================== */
+.hero-bg {
+    background-color: var(--light-beige);
+    position: relative;
+    overflow: hidden; /* This is key for the blob */
+    padding-bottom: 5rem;
+}
+
+/* The decorative background "blob" */
+.hero-bg::after {
+    content: '';
+    position: absolute;
+    top: -150px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background-color: var(--light-tan);
+    border-radius: 50%;
+    z-index: 0;
+    opacity: 0.5;
+}
+
+/* Ensure navbar and hero content are above the blob */
+.navbar, .hero-section {
+    position: relative;
+    z-index: 2;
+}
+
+.navbar-brand {
+    color: var(--dark-text);
+    font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+    color: var(--dark-text);
+    font-weight: 500;
+    margin: 0 0.5rem;
+}
+
+/* Hero Section Content */
+.hero-section {
+    padding: 4rem 0;
+}
+
+.hero-section .subtitle {
+    font-size: 0.9rem;
+    color: var(--primary-green);
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.hero-section h1 {
+    color: var(--dark-text);
+}
+
+.hero-section .tec {
+    font-size: 1.5rem;
+    vertical-align: super; /* Makes the "TEC" smaller and higher */
+    font-weight: 500;
+    margin-left: -5px;
+}
+
+.btn-learn-more {
+    background-color: var(--primary-green);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.btn-learn-more:hover {
+    background-color: #637155; /* A darker green */
+    color: white;
+}
+
+.hero-image {
+    max-width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+/* ===================
+   Stats Section
+==================== */
+.stats-section {
+    padding: 6rem 0;
+    background-color: #ffffff;
+}
+
+.stats-section h2 {
+    color: var(--dark-text);
+    font-size: 2.25rem;
+    line-height: 1.4;
+}
+
+.stat-item .stat-number {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--dark-text);
+}
+
+.stat-item .stars {
+    color: #f39c12; /* A gold/yellow color */
+    font-size: 1.25rem;
+}
+
+.stat-item p {
+    color: var(--body-text);
+    font-weight: 500;
+}
